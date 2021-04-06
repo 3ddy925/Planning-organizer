@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class EventForm(forms.ModelForm):
   class Meta:
     model = Event
-    exclude = ()
+    fields = ('name', 'date', 'time', 'description',)
 
 class SignupForm(UserCreationForm):
   first_name = forms.CharField(max_length=20, required=False, help_text='Optional')
