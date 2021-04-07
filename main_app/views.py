@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime, date
+from django.contrib.auth.decorators import login_required
 from .forms import EventForm, SignupForm, EditProfileForm
 from django.contrib.auth import login
 
@@ -14,7 +15,7 @@ def about(request):
   return render(request, 'about.html')
 
 def profile(request):
-  events = Event.objects.filter(user__id=request.user.id).order_by('date')
+  events = Event.objects.filter(user_id=request.user.id).order_by('date')
   today = date.today()
   events_list = []
   for event in events:
@@ -35,13 +36,6 @@ def edit_profile(request):
   else:
     return render(request, 'registration/edit_profile.html', { 'user': user, 'profile_form': profile_form })
 
-def events_details(request, event_id):
-  events = Event.objects.get(id=event_id)
-  context = {
-    'events': events,
-  }
-  return render(request, 'events/event.html', context)
-
 def new(request):
   event_form = EventForm(request.POST or None)
   if request.POST and event_form.is_valid():
@@ -53,16 +47,19 @@ def new(request):
   else:
     return render(request, 'events/new.html', { 'event_form': event_form })
 
+@login_required
 def events_edit(request, event_id):
+    user = User.objects.get(id=request.user.id)
     events = Event.objects.get(id=event_id)
     form = EventForm(request.POST or None, instance=events)
     context = {
       'events': events,
-      "form": form,
+      'form': form,
+      'user': user,
     }
     if request.method == 'POST' and form.is_valid():
       form.save()
-      return redirect('events_details', event_id=event_id)
+      return redirect('profile')
     else:
       return render(request, 'events/edit.html', context)
 

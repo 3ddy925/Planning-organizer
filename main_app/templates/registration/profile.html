@@ -9,14 +9,6 @@
   <h4>Username: {{ user }}</h4>
   <a class="btn blue" href="{% url 'edit_profile' %}">Edit Profile</a>
   </div>
-{% comment %} {% if user.id == request.user.id  %}
-<div id="profile-buttons">
-<a class="btn blue" href="{% url 'edit_profile' %}">Edit Profile</a>
-<br>
-<br>
-<a class="waves-effect waves-light btn red darken-1 modal-trigger" href="{% url 'change-password' %}">Change Password</a>
-</div>
-{% endif %} {% endcomment %}
 
 {% else %}
 
@@ -30,12 +22,33 @@
   </div>
   {% for event in events %}
     <div class="card">
+    <button type="button" class="collapsible">{{ event.name }} <span class="right">Date: {{ event.date }}</span></button>
       <div class="card-content">
-        <a href="{% url 'events_details' event.id %}"><span class="keyword">{{ event.name }}</span></a><br>
         <p>Description: {{ event.description }}</p>
-        <p>Date: {{ event.date }}</p>
       </div>
+      <a href="{% url 'events_edit' event.id %}" class="btn blue">Edit</a>
+      <form class="right" action="{% url 'events_delete' event.id %}" method="post">
+          {% csrf_token %}
+          <input type="submit" class="waves-effect waves-light btn red darken-1" value="Delete">
+      </form>
     </div>
   {% endfor %}
 </div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 {% endblock %}
