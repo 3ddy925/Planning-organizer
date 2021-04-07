@@ -7,8 +7,8 @@
   <h2 class="profile-title">{% block title %} Hello, {{request.user.get_full_name}} {% endblock %}</h2>
   <div class="profile-info">
   <h4>Username: {{ user }}</h4>
+  <a class="btn blue" href="{% url 'edit_profile' %}">Edit Profile</a>
   </div>
-
 {% comment %} {% if user.id == request.user.id  %}
 <div id="profile-buttons">
 <a class="btn blue" href="{% url 'edit_profile' %}">Edit Profile</a>
@@ -23,12 +23,19 @@
 <h3>Login to view Profile</h3>
 
 {% endif %}
-{% for event in events %}
-  <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ event.name }}</span>
-      <p>Description: {{ event.description }}</p>event
-    </div>
+<br><br>
+<div class="list-container">
+  <div>
+    <a href="{% url 'new' %}" class="btn">Create Event</a>
   </div>
-{% endfor %}
+  {% for event in events %}
+    <div class="card">
+      <div class="card-content">
+        <a href="{% url 'events_details' event.id %}"><span class="keyword">{{ event.name }}</span></a><br>
+        <p>Description: {{ event.description }}</p>
+        <p>Date: {{ event.date }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
 {% endblock %}
