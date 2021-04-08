@@ -14,6 +14,7 @@ def home(request):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def profile(request):
   events = Event.objects.filter(user_id=request.user.id).order_by('date')
   today = date.today()
@@ -27,6 +28,7 @@ def profile(request):
   }
   return render(request, 'registration/profile.html', context)
 
+@login_required
 def edit_profile(request):
   user = User.objects.get(id=request.user.id)
   profile_form = EditProfileForm(request.POST or None, instance=user)
@@ -36,6 +38,7 @@ def edit_profile(request):
   else:
     return render(request, 'registration/edit_profile.html', { 'user': user, 'profile_form': profile_form })
 
+@login_required
 def new(request):
   event_form = EventForm(request.POST or None)
   if request.POST and event_form.is_valid():
