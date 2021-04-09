@@ -17,7 +17,7 @@
             <li style="float:left"><a href="/" class="home-logo">&nbsp;&nbsp;Home</a></li>
           {% if user.is_authenticated %}
             <li style="float:right" class="nav-item"><a href="{% url 'logout' %}">Log Out</a></li>
-            <li style="float:right" class="nav-item"><a href="{% url 'profile' %}">Profile</a></li>
+            <li style="float:right" class="nav-item"><a href="{% url 'profile' %}">My List</a></li>
           {% else %}
             <li style="float:right" class="nav-item"><a href="{% url 'login' %}">Log In</a></li>
             <li style="float:right" class="nav-item"><a href="{% url 'signup' %}">Sign Up</a></li>

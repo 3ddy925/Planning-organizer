@@ -61,7 +61,7 @@ ul {
 }
 
 .login-btn {
-    background-color: #008CBA; /* Green */
+    background-color: dodgerblue;
     border: none;
     border-radius: 12px;
     color: white;
@@ -70,6 +70,11 @@ ul {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor:pointer;
+}
+
+.login-btn:hover {
+    background-color: #008CBA;
 }
 
 .signup {
@@ -171,39 +176,150 @@ body, html {
 }
 
 .sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
     left: 0;
     background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden;
     padding-top: 20px;
-  }
-  
-  /* The navigation menu links */
-  .sidenav a {
+}
+
+/* The navigation menu links */
+.sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Style page content */
-  .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
+}
+
+@media screen and (max-width: 540px) {
     .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
+    .sidenav a {font-size: 10px;}
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+@media screen and (max-height: 540px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 10px;}
+}
+
+@media screen and (max-width: 540px) {
+    .sidenav {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        background-color: #111; /* Black */
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .create-event {
+        width: 30%;
+    }
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.create-button {
+    text-align: center;
+}
+
+.edit-button {
+    float: right;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline:0;
+    cursor:pointer;
+}
+
+.edit-button:hover {
+    background-color: #008CBA;
+}
+
+@media screen and (max-width: 540px) {
+    .edit-button {
+        float: right;
+        background-color: dodgerblue;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10px;
+        outline:0;
+        cursor:pointer;
+    }
+}
+
+.delete-button {
+    background-color: red;
+    outline:0;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.delete-button:hover {
+    background-color: crimson;
+}
+
+@media screen and (max-width: 540px) {
+    .delete-button {
+        background-color: red;
+        outline:0;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10px;
+        cursor:pointer;
+    }
+}
+
+.create-event {
+    background-color: green;
+    outline:0;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.create-event:hover {
+    background-color: forestgreen;
+}

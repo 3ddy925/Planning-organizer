@@ -4,10 +4,15 @@
 
 {% if user.is_authenticated %}
 
-  <h2 class="profile-title">{% block title %} Hello, {{request.user.get_full_name}} {% endblock %}</h2>
   <div class="profile-info">
+  <h2 class="profile-title">{% block title %} Hello, {{request.user.get_full_name}} {% endblock %}</h2>
   <h4>Username: {{ user }}</h4>
-  <a class="btn blue" href="{% url 'edit_profile' %}">Edit Profile</a>
+  </div>
+  <div class="sidenav">
+  <a class="side-text" href="#">About</a>
+  <a class="side-text" href="{% url 'edit_profile' %}">Edit Profile</a>
+  <a class="side-text" href="#">Clients</a>
+  <a class="side-text" href="#">Contact</a>
   </div>
 
 {% else %}
@@ -17,20 +22,23 @@
 {% endif %}
 <br><br><br><br>
 <div class="list-container">
-  <div>
-    <a href="{% url 'new' %}" class="btn">Create Event</a>
+<br><br>
+  <div class="create-button">
+    <a href="{% url 'new' %}"><button class="create-event">Create Event</button></a>
   </div>
+  <br><br>
   {% for event in events %}
     <div class="card">
-    <button type="button" class="collapsible">{{ event.name }} <span class="date-event">Date: {{ event.date }}</span></button>
+    <button type="button" class="collapsible">{{ event.name }} <span class="date-event">Date: {{ event.date }}</span><span class="time-event">Time: {{ event.time }}</span></button>
       <div class="card-content">
-        <p>Description: {{ event.description }}</p>
-      </div>
-      <a href="{% url 'events_edit' event.id %}" class="btn blue">Edit</a>
-      <form class="delete-form" action="{% url 'events_delete' event.id %}" method="post">
+        <p>Description: {{ event.description|linebreaksbr }}</p>
+        <a href="{% url 'events_edit' event.id %}"><button class="edit-button">Edit</button></a>
+        <form class="delete-form" action="{% url 'events_delete' event.id %}" method="post">
           {% csrf_token %}
-          <input type="submit" class="delete-button" value="Delete">
-      </form>
+        <input type="submit" class="delete-button" value="Delete">
+        </form>
+        <br>
+      </div>
     </div>
   {% endfor %}
 </div>
