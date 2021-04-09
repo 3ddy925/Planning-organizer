@@ -9,10 +9,8 @@
   <h4>Username: {{ user }}</h4>
   </div>
   <div class="sidenav">
-  <a class="side-text" href="#">About</a>
   <a class="side-text" href="{% url 'edit_profile' %}">Edit Profile</a>
-  <a class="side-text" href="#">Clients</a>
-  <a class="side-text" href="#">Contact</a>
+  <a class="side-text" href="{% url 'change-password' %}">Change Password</a>
   </div>
 
 {% else %}

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from datetime import date
 
+
 # Create your models here.
 class Profile(models.Model):
   first_name = models.CharField(max_length=20)

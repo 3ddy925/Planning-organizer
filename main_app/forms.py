@@ -9,8 +9,8 @@ class EventForm(forms.ModelForm):
     fields = ('name', 'date', 'time', 'description',)
 
 class SignupForm(UserCreationForm):
-  first_name = forms.CharField(max_length=20, required=False, help_text='Optional')
-  last_name = forms.CharField(max_length=30, required=False, help_text='Optional')
+  first_name = forms.CharField(max_length=20, required=True)
+  last_name = forms.CharField(max_length=30, required=True)
   email = forms.EmailField(max_length=200, help_text='Required')
 
   class Meta:
