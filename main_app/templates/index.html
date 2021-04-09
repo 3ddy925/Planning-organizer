@@ -1,6 +1,58 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Home</h1>
 
+<div class="home-cover">
+    <div class="home-header">
+        <img class="home-image" src="static/images/homepage.jpg" alt="notebook" height="600">
+    </div>
+</div>
+<div class="button-tabs">
+    <button class="tablink" onclick="openPage('Home', this, 'black')" id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('News', this, 'black')">News</button>
+    <button class="tablink" onclick="openPage('About', this, 'black')">About</button>
+</div>
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is where the heart is..</p>
+</div>
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <p>Some news this fine day!</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+<footer class="page-footer">
+  <div id="footer-text" class="right">All Rights Reserved</div>
+</footer>
+
+<script>
+    function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 {% endblock %}

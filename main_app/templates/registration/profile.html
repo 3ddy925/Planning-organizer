@@ -9,28 +9,27 @@
   <h4>Username: {{ user }}</h4>
   <a class="btn blue" href="{% url 'edit_profile' %}">Edit Profile</a>
   </div>
-  
 
 {% else %}
 
 <h3>Login to view Profile</h3>
 
 {% endif %}
-<br><br>
+<br><br><br><br>
 <div class="list-container">
   <div>
     <a href="{% url 'new' %}" class="btn">Create Event</a>
   </div>
   {% for event in events %}
     <div class="card">
-    <button type="button" class="collapsible">{{ event.name }} <span class="right">Date: {{ event.date }}</span></button>
+    <button type="button" class="collapsible">{{ event.name }} <span class="date-event">Date: {{ event.date }}</span></button>
       <div class="card-content">
         <p>Description: {{ event.description }}</p>
       </div>
       <a href="{% url 'events_edit' event.id %}" class="btn blue">Edit</a>
-      <form class="right" action="{% url 'events_delete' event.id %}" method="post">
+      <form class="delete-form" action="{% url 'events_delete' event.id %}" method="post">
           {% csrf_token %}
-          <input type="submit" class="waves-effect waves-light btn red darken-1" value="Delete">
+          <input type="submit" class="delete-button" value="Delete">
       </form>
     </div>
   {% endfor %}

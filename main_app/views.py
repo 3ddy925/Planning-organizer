@@ -75,8 +75,6 @@ def events_delete(request, event_id):
     else:
       return render(request, 'events/event.html', { 'events': events })
 
-
-
 def signup(request):
   error_message = ''
   if request.method == 'POST':
