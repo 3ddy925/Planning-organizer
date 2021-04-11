@@ -32,6 +32,14 @@ ul {
     text-decoration: none;
 }
 
+.home-header {
+    height: 80vh;
+    width: 100%;
+    background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url("/static/images/homepage.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 .nav-item a {
     display: block;
     color: white;
@@ -42,6 +50,12 @@ ul {
 
 .nav-item a:hover {
     background-color: #111;
+}
+
+#change-password {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .login {
@@ -81,9 +95,16 @@ ul {
 
 .signup {
     width: 50%;
-    height: 100%;
+    height: 30%;
     margin: auto;
+    
 }
+
+/* #signup-form {
+    border-radius: 5px;
+    max-width: 100%;
+    width: 300px;
+} */
 
 .signup-btn {
     background-color: dodgerblue;
@@ -167,6 +188,8 @@ ul {
     text-align: left;
     outline: none;
     font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .active, .collapsible:hover {
@@ -191,9 +214,9 @@ ul {
     object-fit: cover;
 }
 
-.home-cover {
+/* .home-cover {
     background-color: black;
-}
+} */
 
 body, html {
     height: 100%;
@@ -237,12 +260,13 @@ body, html {
 }
 
 .sidenav {
-    height: 100%;
+    height: calc(100% - 45px);
     width: 160px;
     position: fixed;
     z-index: 1;
     left: 0;
-    background-color: #111; /* Black */
+    bottom: 0;
+    background-color: #111;
     overflow-x: hidden;
     padding-top: 20px;
 }
