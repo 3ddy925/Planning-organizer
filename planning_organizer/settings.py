@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5^&=g(=55z*bb-pec-s0$)g+u#pe!6i7_&kqlg!e)yu1^u8xt9'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,3 +124,6 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+import django_heroku
+django_heroku.settings(locals())
