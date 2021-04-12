@@ -1,0 +1,588 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: black;
+}
+
+.title-home{
+    line-height: 500px;
+    text-align: center;
+}
+
+.right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul {
+    list-style-type: none;
+    color: red;
+}
+
+.home-logo {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.home-logo a:hover {
+    background-color: #111;
+}
+
+.home-cover {
+    overflow: hidden;
+    width:100%;
+    height:80vh;
+}
+
+.home-header {
+    height: 80vh;
+    width: 100%;
+    background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url("/static/images/homepage.jpg");
+    background-position: center;
+    background-size: cover;
+    -webkit-animation: zoomin 60s ease-in infinite;
+    animation: zoomin 60s ease-in infinite;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+}
+
+@-webkit-keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
+@-webkit-keyframes zoomout {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomout {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+}
+
+.nav-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    background-color: #111;
+}
+
+#change-password {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#id_old_password {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_new_password1 {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_new_password2 {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.change-btn {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.change-btn:hover {
+    background-color: #008CBA;
+}
+
+.edit-profile {
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
+
+.profile-btn {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.profile-btn:hover {
+    background-color: #008CBA;
+}
+
+.login {
+    border-radius: black;
+    box-shadow: 2px 5px 5px 2px;
+    width: 50%;
+    height: 300px;
+    margin: auto;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+}
+
+.login-form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.login-btn {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.login-btn:hover {
+    background-color: #008CBA;
+}
+
+.signup {
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    
+}
+
+/* #signup-form {
+    border-radius: 5px;
+    max-width: 100%;
+    width: 300px;
+} */
+
+.signup-btn {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.signup-btn:hover {
+    background-color: #008CBA;
+}
+
+#id_first_name {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_last_name {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_password1, #id_password2 {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_email {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.date-event {
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .login {
+        height: 250px;
+        width: 250px;
+    }
+  }
+
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.card-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.card{
+    width: 50%;
+    margin: auto;
+}
+
+.home-image {
+    width: 100%;
+    z-index: 0;
+    object-fit: cover;
+}
+
+/* .home-cover {
+    background-color: black;
+} */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 33.33%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+.tabcontent {
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    text-align: center;
+}
+
+#Work {
+    background-color: #d8e2dc;
+}
+
+#About {
+    background-color: #e9ecef;
+}
+
+#Mission {
+    background-color: #dee2e6;
+}
+
+.sidenav {
+    height: calc(100% - 45px);
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.create-button {
+    text-align: center;
+}
+
+.edit-button {
+    float: right;
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    outline:0;
+    cursor:pointer;
+}
+
+.edit-button:hover {
+    background-color: #008CBA;
+}
+
+.delete-button {
+    background-color: red;
+    outline:0;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.delete-button:hover {
+    background-color: crimson;
+}
+
+.create-event {
+    background-color: green;
+    outline:0;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.create-event:hover {
+    background-color: forestgreen;
+}
+
+#id_username {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_password {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_date {
+    width: 80%;
+}
+
+@media screen and (max-width: 540px) {
+    img {
+        width: 200px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #home-info {
+        width: 100%;
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #defaultOpen {
+        width: 100%;
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .delete-button {
+        background-color: red;
+        outline:0;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10px;
+        cursor:pointer;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .edit-button {
+        float: right;
+        background-color: dodgerblue;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 10px;
+        outline:0;
+        cursor:pointer;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .profile-info {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .sidenav {
+        height: calc(100% - 45px);
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        background-color: #111; /* Black */
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .create-event {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 10px;}
+}
+
+@media screen and (max-height: 540px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 10px;}
+}
+
+@media screen and (max-width: 540px) {
+    .login{
+        width: 90%;
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .login-btn{
+        width: 40%;
+        height: 80%;
+        margin-bottom: 10px;
+    }
+}

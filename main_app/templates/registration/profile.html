@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+  <div class="profile-info">
+  <h2 class="profile-title">{% block title %} Hello, {{request.user.get_full_name}} {% endblock %}</h2>
+  <h4>Username: {{ user }}</h4>
+  </div>
+  <div class="sidenav">
+  <a class="side-text" href="{% url 'edit_profile' %}">Edit Profile</a>
+  <a class="side-text" href="{% url 'change-password' %}">Change Password</a>
+  </div>
+
+{% else %}
+
+<h3>Login to view Profile</h3>
+
+{% endif %}
+<br><br><br><br>
+<div class="list-container">
+<br><br>
+  <div class="create-button">
+    <a href="{% url 'new' %}"><button class="create-event">Create Event</button></a>
+  </div>
+  <br><br>
+  {% for event in events %}
+    <div class="card">
+    <button type="button" class="collapsible">{{ event.name }} <span class="date-event">Date: {{ event.date }}</span><span class="time-event">Time: {{ event.time }}</span></button>
+      <div class="card-content">
+        <p>Description: {{ event.description|linebreaksbr }}</p>
+        <a href="{% url 'events_edit' event.id %}"><button class="edit-button">Edit</button></a>
+        <form class="delete-form" action="{% url 'events_delete' event.id %}" method="post">
+          {% csrf_token %}
+        <input type="submit" class="delete-button" value="Delete">
+        </form>
+        <br>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+{% endblock %}

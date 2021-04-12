@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="home-cover">
+    <div class="home-header">
+        <h1 class="title-home">Never Miss List</h1>
+    </div>
+</div>
+<div class="button-tabs">
+    <button class="tablink" onclick="openPage('Work', this, 'black')" id="defaultOpen">Getting Started</button>
+    <button id="home-info" class="tablink" onclick="openPage('About', this, 'black')">About</button>
+    <button id="home-info" class="tablink" onclick="openPage('Mission', this, 'black')">Mission</button>
+</div>
+<div id="Work" class="tabcontent">
+  <h3>First Step - Create An Account</h3>
+  <p>1. Create an account by clicking the Sign Up tab in the top right corner of the page</p>
+  <p>2. Enter Your information, which includes creating and inputting</p>
+  <img src="static/images/1st.jpg" width="400" height="300">
+  <ul>
+    <li style="color:black">Username</li>
+    <li style="color:black">Last Name</li>
+    <li style="color:black">First Name</li>
+    <li style="color:black">Email</li>
+    <li style="color:black">Password</li>
+    <li style="color:black">Password Confirmation</li>
+  </ul>
+  <p>3. After creating an account, you'll be directed to your list profile</p>
+  <p>In this page you can create a an event to add to your list by clicking the "Create Event" button</p>
+  <img src="static/images/2nd.jpg" width="400" height="300">
+  <p>4. Give the event an name, add the date, time, and a description and click on the "Create Event" button</p>
+  <p>5. To see the description of an event just click the on the rectangle with the event name and it should collapse with the description</p>
+  <p>6. You can edit and delete the event after creation by clicking either the "Delete" or "Edit" button</p>
+  <img src="static/images/3rd.jpg" width="500" height="300">
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About - Never Miss List</h3>
+  <p>Never Miss List is a user friendly todo list application. Meant to be simple enough for anyone to use,</p>
+  <p>regardless of age, experience, and background</p>
+  <p>Give the user the ability to create an event with a description and due date.</p>
+  <p>Once the date is passed the item will be automatically removed</p>
+</div>
+
+<div id="Mission" class="tabcontent">
+  <h3>Our Mission</h3>
+  <p>Our mission is to provide the most user friendly todo list application</p>
+  <p>Which anyone can use for FREE</p>
+  <p>A tool that even my forgetful and not so technically sound parents can use</p>
+</div>
+<footer class="page-footer">
+  <div id="footer-text" class="right">All Rights Reserved</div>
+</footer>
+
+<script>
+    function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+{% endblock %}
