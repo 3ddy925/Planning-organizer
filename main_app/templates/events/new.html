@@ -8,6 +8,7 @@
     {% csrf_token %}
     {{ event_form.as_p }}
     <input type="submit" class="btn" value="Create Event">
+    <button class="waves-effect waves-light btn red darken-1" onclick="goBack()">Cancel</button>
   </form>
 <script>
   const dateEl = document.getElementById('id_date');
@@ -24,5 +25,9 @@ M.Timepicker.init(time, {
   defaultTime: 'now',
   twelveHour: false,
 });
+
+function goBack() {
+  window.history.back();
+}
 </script>
 {% endblock content %}

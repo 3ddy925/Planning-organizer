@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Planning Organizer</title>
+  <title>Never Miss List</title>
   {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> {% endcomment %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
@@ -14,7 +14,7 @@
     <nav>
       <div class="nav-wrapper">
         <ul class="right">
-            <li style="float:left"><a href="/" class="home-logo">&nbsp;&nbsp;Home</a></li>
+            <li style="float:left"><a href="/" class="home-logo">Home</a></li>
           {% if user.is_authenticated %}
             <li style="float:right" class="nav-item"><a href="{% url 'logout' %}">Log Out</a></li>
             <li style="float:right" class="nav-item"><a href="{% url 'profile' %}">My List</a></li>

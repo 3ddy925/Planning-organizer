@@ -4,11 +4,15 @@
 
 body {
     margin: 0;
-    background-color: lightgrey;
 }
 
 nav {
     background-color: black;
+}
+
+.title-home{
+    line-height: 500px;
+    text-align: center;
 }
 
 .right {
@@ -32,12 +36,48 @@ ul {
     text-decoration: none;
 }
 
+.home-logo a:hover {
+    background-color: #111;
+}
+
+.home-cover {
+    overflow: hidden;
+    width:100%;
+    height:80vh;
+}
+
 .home-header {
     height: 80vh;
     width: 100%;
     background:linear-gradient( rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5)100%),url("/static/images/homepage.jpg");
     background-position: center;
     background-size: cover;
+    -webkit-animation: zoomin 60s ease-in infinite;
+    animation: zoomin 60s ease-in infinite;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+}
+
+@-webkit-keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomin {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+}
+
+@-webkit-keyframes zoomout {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+}
+@keyframes zoomout {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
 }
 
 .nav-item a {
@@ -56,6 +96,79 @@ ul {
     width: 300px;
     margin: 0 auto;
     text-align: center;
+}
+
+#id_old_password {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_new_password1 {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#id_new_password2 {
+    margin-top: 50px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.change-btn {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.change-btn:hover {
+    background-color: #008CBA;
+}
+
+.edit-profile {
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
+
+.profile-btn {
+    background-color: dodgerblue;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.profile-btn:hover {
+    background-color: #008CBA;
 }
 
 .login {
@@ -241,22 +354,22 @@ body, html {
 }
 
 .tabcontent {
-    color: white;
     display: none;
     padding: 100px 20px;
     height: 100%;
+    text-align: center;
 }
 
 #Work {
-    background-color: red;
+    background-color: #d8e2dc;
 }
 
 #About {
-    background-color: green;
+    background-color: #e9ecef;
 }
 
 #Mission {
-    background-color: orange;
+    background-color: #dee2e6;
 }
 
 .sidenav {
@@ -280,37 +393,8 @@ body, html {
     display: block;
 }
 
-@media screen and (max-width: 540px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 10px;}
-}
-
 .sidenav a:hover {
     color: #f1f1f1;
-}
-
-@media screen and (max-height: 540px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 10px;}
-}
-
-@media screen and (max-width: 540px) {
-    .sidenav {
-        height: 100%;
-        width: 20%;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        background-color: #111; /* Black */
-        overflow-x: hidden;
-        padding-top: 20px;
-    }
-}
-
-@media screen and (max-width: 540px) {
-    .create-event {
-        width: 30%;
-    }
 }
 
 .profile-info {
@@ -339,22 +423,6 @@ body, html {
     background-color: #008CBA;
 }
 
-@media screen and (max-width: 540px) {
-    .edit-button {
-        float: right;
-        background-color: dodgerblue;
-        border: none;
-        border-radius: 12px;
-        color: white;
-        padding: 5px 10px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 10px;
-        outline:0;
-        cursor:pointer;
-    }
-}
-
 .delete-button {
     background-color: red;
     outline:0;
@@ -371,22 +439,6 @@ body, html {
 
 .delete-button:hover {
     background-color: crimson;
-}
-
-@media screen and (max-width: 540px) {
-    .delete-button {
-        background-color: red;
-        outline:0;
-        border: none;
-        border-radius: 12px;
-        color: white;
-        padding: 5px 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 10px;
-        cursor:pointer;
-    }
 }
 
 .create-event {
@@ -430,4 +482,107 @@ body, html {
 
 #id_date {
     width: 80%;
+}
+
+@media screen and (max-width: 540px) {
+    img {
+        width: 200px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #home-info {
+        width: 100%;
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #defaultOpen {
+        width: 100%;
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .delete-button {
+        background-color: red;
+        outline:0;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 10px;
+        cursor:pointer;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .edit-button {
+        float: right;
+        background-color: dodgerblue;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 10px;
+        outline:0;
+        cursor:pointer;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .profile-info {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .sidenav {
+        height: calc(100% - 45px);
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        background-color: #111; /* Black */
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .create-event {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 10px;}
+}
+
+@media screen and (max-height: 540px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 10px;}
+}
+
+@media screen and (max-width: 540px) {
+    .login{
+        width: 90%;
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .login-btn{
+        width: 40%;
+        height: 80%;
+        margin-bottom: 10px;
+    }
 }
