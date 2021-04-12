@@ -52,7 +52,7 @@ $ python manage.py runserver
 
 <h2>Features</h2>
 <ul>
-<li>As a user I would to sign up and sign in </li>
+<li>As a user I would like to sign up and sign in </li>
 <li>As a user I would have a profile after user created</li>
 <li>As a user I would to edit profile information</li>
 <li>As a user I would like to have a personal todo list on profile</li>
